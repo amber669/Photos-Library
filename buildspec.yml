@@ -8,7 +8,7 @@ phases:
       - pip install --upgrade pip
       - pip install pipenv --user
       - pipenv install awscli aws-sam-cli
-      - pipenv run sam package --template-file template.yml --s3-bucket lambdapipline1 --output-template-file outputsampletemplate.yaml
+      - pipenv run sam package --template-file sampleTemplate.yaml --s3-bucket lambdapipline1 --output-template-file outputsampletemplate.yaml
 artifacts:
   files:
     - packaged-template.yml
