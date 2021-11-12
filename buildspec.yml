@@ -1,10 +1,14 @@
-version: 0.1
+version: 0.2
 phases:
   install:
+    runtime-versions:
+        python: 3.7
+  build:
     commands:
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket lambdapipeline-demo --output-template-file outputsamtemplate.yml
+      - pip install --upgrade pip
+      - pip install pipenv --user
+      - pipenv install awscli aws-sam-cli
+      - pipenv run sam package --template-file template.yml --s3-bucket lambdapipline1 --output-template-file outputsampletemplate.yaml
 artifacts:
-  type: zip
   files:
-    - samTemplate.yaml
-    - outputsamtemplate.yml
+    - packaged-template.yml
