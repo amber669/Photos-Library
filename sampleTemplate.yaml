@@ -2,10 +2,10 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: CD Demo Lambda
 Resources:
-  my-s3-function:
+  indexPhotoFunc:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: LFX
+      FunctionName: my-s3-function
       Handler: lambda_function.lambda_handler
       Runtime: python3.8
       CodeUri: ./Lambda/my-s3-function
@@ -16,10 +16,10 @@ Resources:
       Environment:
         Variables:
           REGION: us-east-1
-  search-photos:
+  searchPhotoFunc:
     Type: 'AWS::Serverless::Function'
     Properties:
-      FunctionName: LFX
+      FunctionName: search-photos
       Handler: lambda_function.lambda_handler
       Runtime: python3.8
       CodeUri: ./Lambda/search-photos
