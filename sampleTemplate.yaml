@@ -12,7 +12,7 @@ Resources:
       Description: 'index photo Lambda function'
       MemorySize: 128
       Timeout: 30
-      Role: 'arn:aws:lambda:us-east-1:170015019306:function:my-s3-function'
+      Role: 'arn:aws:iam::170015019306:role/service-role/my-s3-function-role'
       Environment:
         Variables:
           REGION: us-east-1
@@ -26,7 +26,7 @@ Resources:
       Description: 'search photo Lambda function'
       MemorySize: 128
       Timeout: 30
-      Role: 'arn:aws:lambda:us-east-1:170015019306:function:search-photos'
+      Role: 'arn:aws:iam::170015019306:role/service-role/search-photos-role-nxuz91bo'
       Environment:
         Variables:
           REGION: us-east-1
