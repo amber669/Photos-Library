@@ -20,6 +20,7 @@ awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, region, servi
 
     
 def lambda_handler(event, context):
+    print("test")
     os.environ['TZ'] = 'America/New_York'
     time.tzset()
     q1 = event["queryStringParameters"]['q']
